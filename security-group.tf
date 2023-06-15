@@ -1,7 +1,7 @@
 # SECURITY GROUP
 resource "aws_security_group" "allow_food-1" {
-  name        = "allow_tls"
-  description = "Allow TLS inbound traffic"
+  name        = "food-1 ssh-http"
+  description = "Allow ssh & http inbound traffic"
   vpc_id      = aws_vpc.food-1-vpc.id
 
   ingress {
@@ -19,7 +19,7 @@ resource "aws_security_group" "allow_food-1" {
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
   }
-  
+
   egress {
     from_port        = 0
     to_port          = 0
